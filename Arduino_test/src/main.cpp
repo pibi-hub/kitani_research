@@ -1,9 +1,11 @@
 #include <Arduino.h>
 
 void setup() {
-  pinMode( 13, OUTPUT );
+  Serial.begin(9600);
 }
 
 void loop() {
-  digitalWrite( 13, HIGH );
+  Serial.println("From Arduino Message.");
+
+  delay(1000);
 }
