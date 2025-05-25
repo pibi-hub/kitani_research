@@ -1,23 +1,26 @@
 #include <Arduino.h>
 
+void led_blink( int count, int interval );
+
 void setup() {
-  Serial.begin(9600);
+  pinMode( 13, OUTPUT );
 }
 
 void loop() {
-  int value1, value2, answer;
-  
-  value1 = 10;
-  value2 = 3;
+  led_blink( 10, 1000 );
 
-  answer = value1 * value2 ;
+  led_blink( 3, 5000 );
 
-  Serial.print("Formula : ");
-  Serial.print( value1 );
-  Serial.print( " * " );
-  Serial.println( value2 );
-  Serial.print( "Answer : " );
-  Serial.println( answer );
+  led_blink( 7, 3000 );
+}
 
-  delay(10000);
+void led_blink( int count, int interval ){
+  int i = 0;
+  while( i < count ){
+      digitalWrite( 13, HIGH );
+      delay(interval);
+      digitalWrite( 13, LOW );
+      delay(interval);
+      i++;
+  }
 }
