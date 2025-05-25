@@ -5,7 +5,19 @@ void setup() {
 }
 
 void loop() {
-  Serial.println("From Arduino Message.");
+  int value1, value2, answer;
+  
+  value1 = 10;
+  value2 = 3;
 
-  delay(1000);
+  answer = value1 * value2 ;
+
+  Serial.print("Formula : ");
+  Serial.print( value1 );
+  Serial.print( " * " );
+  Serial.println( value2 );
+  Serial.print( "Answer : " );
+  Serial.println( answer );
+
+  delay(10000);
 }
